@@ -1,0 +1,33 @@
+{
+    "fields": [
+        {
+            "name": "state_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "state",
+            "type": "string"
+        },
+        {
+            "name": "capital",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "state_id",
+            "references": "id",
+            "on": "states",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "state",
+            "type": "belongsTo",
+            "class": "App\\State"
+        }
+
+    ]
+
+}

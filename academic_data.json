@@ -1,0 +1,56 @@
+{
+    "fields": [
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "period_id",
+            "type": "integer#unsigned"
+        }
+
+    ],
+    "foreign_keys": [
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "period_id",
+            "references": "id",
+            "on": "periods",
+            "onDelete": "cascade"
+        }
+    ],
+    "validations": [
+        {
+            "field": "user_id",
+            "rules": "required"
+        },
+        {
+            "field": "period_id",
+            "rules": "required"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "period",
+            "type": "belongsTo",
+            "class": "App\\Period"
+        },
+        {
+            "name": "matter_academic_data",
+            "type": "hasMany",
+            "class": "App\\MatterAcademiData"
+        }
+
+    ]
+
+}

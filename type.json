@@ -1,0 +1,27 @@
+{
+    "fields": [
+        {
+            "name": "type",
+            "type": "string"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "person",
+            "type": "hasMany",
+            "class": "App\\Person"
+        },
+        {
+            "name": "company",
+            "type": "hasMany",
+            "class": "App\\Company"
+        }
+    ],
+    "validations": [
+        {
+            "field": "type",
+            "rules": "required|max:150"
+        }
+    ]
+
+}

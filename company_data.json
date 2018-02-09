@@ -1,0 +1,95 @@
+{
+    "fields": [
+        {
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "name": "web_side",
+            "type": "string"
+        },
+        {
+            "name": "economic_activity",
+            "type": "string"
+        },
+        {
+            "name": "personal_information_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "statu_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "personal_information_id",
+            "references": "id",
+            "on": "personal_informations",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "statu_id",
+            "references": "id",
+            "on": "status",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "personalinformation",
+            "type": "belongsTo",
+            "class": "App\\PersonalInformation"
+        },
+        {
+            "name": "statu",
+            "type": "belongsTo",
+            "class": "App\\Statu"
+        },
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "type_id",
+            "rules": "required"
+        },
+        {
+            "field": "name",
+            "rules": "required|max:150"
+        },
+        {
+            "field": "last_name",
+            "rules": "required|max:150"
+        },
+        {
+            "field": "phone",
+            "rules": "required|max:16"
+        },
+        {
+            "field": "address",
+            "rules": "required"
+        },
+        {
+            "field": "origin_city_id",
+            "rules": "required"
+        },
+        {
+            "field": "recidency_city_id",
+            "rules": "required"
+        }
+    ]
+}

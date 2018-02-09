@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "role",
+            "type": "string"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "hasMany",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "role",
+            "rules": "required|max:150"
+        }
+    ]
+
+}

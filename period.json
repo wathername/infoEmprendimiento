@@ -1,0 +1,24 @@
+{
+    "fields": [
+        {
+            "name": "period",
+            "type": "string"
+        }
+
+
+    ],
+    "validations": [
+        {
+            "field": "period",
+            "rules": "required|max:255"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "type",
+            "type": "hasMany",
+            "class": "App\\AcademicData"
+        }
+    ]
+
+}

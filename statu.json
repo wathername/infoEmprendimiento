@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "statu",
+            "type": "string"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "hasMany",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "statu",
+            "rules": "required|max:150"
+        }
+    ]
+
+}

@@ -1,0 +1,17 @@
+{
+    "fields": [
+        {
+            "name": "matter",
+            "type": "string"
+        }
+
+
+    ],
+    "validations": [
+        {
+            "field": "matter",
+            "rules": "required|max:150"
+        }
+    ]
+
+}

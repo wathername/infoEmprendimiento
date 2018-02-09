@@ -1,0 +1,50 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "content",
+            "type": "text"
+        },
+        {
+            "name": "image",
+            "type": "string"
+        },
+        {
+            "name": "category_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "category_id",
+            "references": "id",
+            "on": "categories",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "category",
+            "type": "belongsTo",
+            "class": "App\\Category"
+        }
+    ]
+}

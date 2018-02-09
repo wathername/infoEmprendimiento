@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "profession",
+            "type": "string"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "hasMany",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "profession",
+            "rules": "required|max:150"
+        }
+    ]
+
+}

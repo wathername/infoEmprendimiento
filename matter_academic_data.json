@@ -1,0 +1,41 @@
+{
+    "fields": [
+        {
+            "name": "academic_data_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "matter_id",
+            "type": "integer#unsigned"
+        }
+
+    ],
+    "foreign_keys": [
+        {
+            "column": "academic_data_id",
+            "references": "id",
+            "on": "academic_datas",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "matter_id",
+            "references": "id",
+            "on": "matters",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "matter",
+            "type": "belongsTo",
+            "class": "App\\Matter"
+        },
+        {
+            "name": "academic_data",
+            "type": "belongsTo",
+            "class": "App\\AcademiData"
+        }
+
+    ]
+
+}

@@ -1,0 +1,53 @@
+{
+    "fields": [
+        {
+            "name": "personal_information_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "company_data",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "statu_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "personal_information_id",
+            "references": "id",
+            "on": "personal_informations",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "company_data",
+            "references": "id",
+            "on": "company_data",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "statu_id",
+            "references": "id",
+            "on": "status",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "personalinformation",
+            "type": "belongsTo",
+            "class": "App\\PersonalInformation"
+        },
+        {
+            "name": "companydata",
+            "type": "belongsTo",
+            "class": "App\\CompanyDatum"
+        },
+        {
+            "name": "statu",
+            "type": "belongsTo",
+            "class": "App\\Statu"
+        }
+    ]
+}

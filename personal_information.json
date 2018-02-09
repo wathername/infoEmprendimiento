@@ -1,0 +1,113 @@
+{
+    "fields": [
+        {
+            "name": "type_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "identification",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "last_name",
+            "type": "string"
+        },
+        {
+            "name": "phone",
+            "type": "string"
+        },
+        {
+            "name": "origin_city_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "recidency_city_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "address",
+            "type": "text"
+        },
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "type_id",
+            "references": "id",
+            "on": "tipes",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "origin_city_id",
+            "references": "id",
+            "on": "ciudades",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "recidency_city_id",
+            "references": "id",
+            "on": "cuidades",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "type",
+            "type": "belongsTo",
+            "class": "App\\Tipe"
+        },
+        {
+            "name": "city",
+            "type": "belongsTo",
+            "class": "App\\City"
+        },
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "type_id",
+            "rules": "required"
+        },
+        {
+            "field": "name",
+            "rules": "required|max:150"
+        },
+        {
+            "field": "last_name",
+            "rules": "required|max:150"
+        },
+        {
+            "field": "phone",
+            "rules": "required|max:16"
+        },
+        {
+            "field": "address",
+            "rules": "required"
+        },
+        {
+            "field": "origin_city_id",
+            "rules": "required"
+        },
+        {
+            "field": "recidency_city_id",
+            "rules": "required"
+        }
+    ]
+}

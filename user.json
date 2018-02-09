@@ -1,0 +1,46 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "last_name",
+            "type": "string"
+        },
+        {
+            "name": "user",
+            "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "name": "password",
+            "type": "string"
+        },
+        {
+            "name": "role_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "statu_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "role_id",
+            "references": "id",
+            "on": "roles",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "statu_id",
+            "references": "id",
+            "on": "status",
+            "onDelete": "cascade"
+        }
+    ]
+}

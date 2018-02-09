@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "city",
+            "type": "string"
+        },
+        {
+            "name": "iso_3166-2",
+            "type": "string"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "city",
+            "type": "hasMany",
+            "class": "App\\City"
+        }
+
+    ]
+
+}

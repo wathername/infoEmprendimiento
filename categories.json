@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "post",
+            "type": "hasMany",
+            "class": "App\\Post"
+        }
+    ],
+    "validations": [
+        {
+            "field": "name",
+            "rules": "required|max:255"
+        }
+    ]
+
+}
